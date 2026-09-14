@@ -20,6 +20,23 @@
 </head>
 <body>
 <main>
+<script>
+const upcomingToursObserver = new ResizeObserver(function() {
+
+	const height = document.documentElement.scrollHeight;
+
+	window.parent.postMessage(
+		{
+			type: "upcomingToursHeight",
+			height: height
+		},
+		"https://www.bible-tours.co.uk"
+	);
+
+});
+
+upcomingToursObserver.observe(document.body);
+</script>
 </ul>
 <h4 class='lang'>English</h4>
 <ul class='tours'>
